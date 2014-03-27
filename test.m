@@ -4,7 +4,7 @@ load('B');
 disp('----------------------------Start Build---------------------------');
 syms t1 t2 t3 t4 t5 t6
 precompileMFunctionPro('B',B,{[t1,t2,t3,t4,t5,t6]},{'q'});
-precompileMatlabFunctionPro('B',B,{[t1 t2 t3 t4 t5 t6]},{'q'});
+%precompileMatlabFunctionPro('B',B,{[t1 t2 t3 t4 t5 t6]},{'q'}); %Very slow in compilation
 precompileCFunctionPro('B',B,{[t1,t2,t3,t4,t5,t6]},{'q'});
 precompileDistCFunctionPro('BD',B,{[t1,t2,t3,t4,t5,t6]},{'q'});
 precompileSFunctionPro('B',B,{[t1,t2,t3,t4,t5,t6]},{'q'});
@@ -35,14 +35,14 @@ end
 disp('For 1000 clicle M-function the');
 toc
 
-%test M-function
-tic
-N=1000;
-for i=1:N
-    M=BMF([i,i*2,i*3,i*4,i*5,i*6]);
-end
-disp('For 1000 clicle MatlabFunction the');
-toc
+%test matalbFunction 
+%tic
+%N=1000;
+%for i=1:N
+%    M=BMF([i,i*2,i*3,i*4,i*5,i*6]);
+%end
+%disp('For 1000 clicle MatlabFunction the');
+%toc
 
 %test M-function
 tic
