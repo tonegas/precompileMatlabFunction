@@ -19,15 +19,15 @@ precompileCFunctionPro to generate C++ source MEX-Files from a symbolic matrix, 
 
 precompileDistCFunctionPro will generate C++ source MEX-Files from a symbolic matrix, 100 times fast in execution respect NameMF.m, the difference from precompileCFunctionPro is that this function create one file for each element of the matrix and then will compile all file together.
 	
-	precompileCFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameC.mexw64
+	precompileDistCFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameC.mexw64
 
 precompileSFunctionPro to generate S-Function from a symbolic matrix.
 	
-	precompileCFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameS.mexw64
+	precompileSFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameS.mexw64
 
 precompileDistSFunctionPro will generate S-Function from a symbolic matrix the difference from precompileSFunctionPro is that this function create one file for each element of the matrix and then will compile all file together.
 	
-	precompileCFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameS.mexw64
+	precompileDistSFunctionPro(Name,SymbolicMatrix,Params,SymbolList) -> NameS.mexw64
 
 
 example:
