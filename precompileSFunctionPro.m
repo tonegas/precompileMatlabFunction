@@ -68,8 +68,12 @@ function precompileSFunctionPro(Name,SymbolicMatrix,Params,SymbolList)
             max=lunghezza{indlist+1};
         end
     end
-    powsintrue{nlist,max-1}=[];
-    powcostrue{nlist,max-1}=[];
+    
+    if max > 1
+        powsintrue{nlist,max-1}=[];
+        powcostrue{nlist,max-1}=[];
+    end
+    
     for indlist=0:nlist-1
         lunghezza{indlist+1} = length(Params{indlist+1});     %Numero elementi
         fprintf(fid,strcat('\tssSetInputPortWidth(S,',num2str(indlist),',',num2str(lunghezza{indlist+1}),');\n'));
@@ -153,11 +157,11 @@ function precompileSFunctionPro(Name,SymbolicMatrix,Params,SymbolList)
                         end
                     end
                     if(costrue{indlist}(x)==1)
-                        M = strrep(M,strcat('cos(',SymbolList{indlist},'[',num2str(x-1),'])'),...
+                        M = strrep(M,strcat('cos((*',SymbolList{indlist},'[',num2str(x-1),'])'),...
                             strcat('c',num2str(SymbolList{indlist}),num2str(x)));
                     end
                     if(sintrue{indlist}(x)==1)
-                        M = strrep(M,strcat('sin(',SymbolList{indlist},'[',num2str(x-1),'])'),...
+                        M = strrep(M,strcat('sin((*',SymbolList{indlist},'[',num2str(x-1),'])'),...
                             strcat('s',num2str(SymbolList{indlist}),num2str(x)));
                     end
                     for pot = 2:lunghezza{indlist}
