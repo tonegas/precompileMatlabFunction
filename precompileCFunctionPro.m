@@ -70,8 +70,11 @@ function precompileCFunctionPro(Name,SymbolicMatrix,Params,SymbolList)
     fprintf(fid,['\tif(nrhs!=',num2str(nlist),'){mexErrMsgIdAndTxt("MyToolbox:arrayProduct:nrhs","',num2str(nlist),' inputs required.");}\n']);
     fprintf(fid,'\tif(nlhs!=1){mexErrMsgIdAndTxt("MyToolbox:arrayProduct:nlhs","1 outputs required.");}\n\n');
     
-    powsintrue{nlist,max-1}=[];
-    powcostrue{nlist,max-1}=[];
+    if max > 1
+        powsintrue{nlist,max-1}=[];
+        powcostrue{nlist,max-1}=[];
+    end
+    
     for indlist=0:nlist-1
         lunghezza{indlist+1} = length(Params{indlist+1});     %Numero elementi
         costrue{indlist+1} = zeros(1,lunghezza{indlist+1});
