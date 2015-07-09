@@ -157,11 +157,11 @@ function precompileSFunctionPro(Name,SymbolicMatrix,Params,SymbolList)
                         end
                     end
                     if(costrue{indlist}(x)==1)
-                        M = strrep(M,strcat('cos((*',SymbolList{indlist},'[',num2str(x-1),'])'),...
+                        M = strrep(M,strcat('cos((*',SymbolList{indlist},'[',num2str(x-1),']))'),...
                             strcat('c',num2str(SymbolList{indlist}),num2str(x)));
                     end
                     if(sintrue{indlist}(x)==1)
-                        M = strrep(M,strcat('sin((*',SymbolList{indlist},'[',num2str(x-1),'])'),...
+                        M = strrep(M,strcat('sin((*',SymbolList{indlist},'[',num2str(x-1),']))'),...
                             strcat('s',num2str(SymbolList{indlist}),num2str(x)));
                     end
                     for pot = 2:lunghezza{indlist}
